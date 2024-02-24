@@ -13,3 +13,9 @@ user.update!(
     password: "password",
     password_confirmation: "password"
 )
+
+
+100.times do |i|
+    blog_post = BlogPost.where(title: "Blog post #{i}").first_or_initialize
+    blog_post.update(content: "This is another blog post. Andrea preciosa. \n Lorem ipsum dolor sit amet.\n Another paragraph. Derwf ui, urhfur rgnsiug. Porigj u srgn, yuarfhpurgh.", published_at: Time.current)
+end
